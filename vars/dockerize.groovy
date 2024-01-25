@@ -1,6 +1,6 @@
 
 def getCommitHash(){
-    return sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim
+    return sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
 }
 
 def buildDockerImage(String DockerRegistry, String image){
