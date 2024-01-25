@@ -17,7 +17,7 @@ def asService(String OPENSHIFT_CONFIG_FILE, String deploymentName) {
         script {
              withCredentials([file(credentialsId: OPENSHIFT_CONFIG_FILE, variable: 'KUBE_CONFIG_FILE')]) {
            env.KUBECONFIG = sh(script: "echo \$KUBE_CONFIG_FILE", returnStdout: true).trim()
-            sh "oc expose deployment \${eploymentName} --kubeconfig=\$KUBECONFIG"
+            sh "oc expose deployment \${deploymentName} --kubeconfig=\$KUBECONFIG"
   
         }
         }
