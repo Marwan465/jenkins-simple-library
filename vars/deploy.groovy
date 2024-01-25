@@ -1,7 +1,7 @@
 
 
 
-def opensiftDeploy(String OPENSHIFT_CONFIG_FILE, String nameSpace, String yamlPath){
+def openshiftDeploy(String OPENSHIFT_CONFIG_FILE, String nameSpace, String yamlPath){
         script {
                     withCredentials([file(credentialsId: OPENSHIFT_CONFIG_FILE, variable: 'KUBE_CONFIG_FILE')]) {
            env.KUBECONFIG = sh(script: "echo \$KUBE_CONFIG_FILE", returnStdout: true).trim() 
