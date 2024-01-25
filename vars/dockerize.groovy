@@ -8,7 +8,7 @@ def buildDockerImage(String DockerRegistry, String image){
     script{
         def commitHash = getCommitHash()
         def dockerImage = docker.build("${DockerRegistry}/${image}:${CommitHash}")
-        return commitHash, dockerImage
+        return [commitHash, dockerImage]
     }
 
 }
