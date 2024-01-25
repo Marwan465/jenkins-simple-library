@@ -13,7 +13,7 @@ def buildDockerImage(String DockerRegistry, String image){
 
 }
 
-def pushDockerImage(String registryCredential, Image dockerImage){
+def pushDockerImage(String registryCredential, String dockerImage){
     script{
         def commitHash = getCommitHash()
         withCredentials([usernamePassword(credentialsId: registryCredential, usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]){
