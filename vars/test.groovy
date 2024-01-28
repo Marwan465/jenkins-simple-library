@@ -2,7 +2,14 @@
 
 def unitTest(){
     script {
-        echo "unit test not yet implemented"
+       // try {
+            sh './gradlew test'
+            //echo "Unit Test Passed"
+     //}
+        // catch(e){
+        //     echo "Test failed : ${e}"
+        // }
+        
     }
 }
 
@@ -21,6 +28,6 @@ def regressionTest() {
 
 def sonarQubeTest(){
     script{
-        echo "sonarQube test not yet implemented"
+        sh './gradlew sonar'
     }
 }
